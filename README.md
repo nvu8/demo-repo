@@ -3,4 +3,4 @@ mvc project
 pivitol tracker branch
 cow goes moo
 ##maintainers
-+ Nick Vu
++ Nick VuH
