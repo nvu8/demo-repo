@@ -6,12 +6,15 @@
 trigger:
 - master
 
+pr:
+-'azure-pipelines'
+
 pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
+-task: DotnetInstaller@04
+inputs:
+    version: '2.1.300'
+-script: 'dotnet restore ./demo-repo/WebApplication1.sln'
+-script: 'dotnet build ./demo-repo/WebApplication1.sln'
